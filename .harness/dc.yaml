@@ -1,0 +1,40 @@
+pipeline:
+  name: dc
+  identifier: dc
+  projectIdentifier: cd
+  orgIdentifier: default
+  tags: {}
+  properties:
+    ci:
+      codebase:
+        connectorRef: account.Github_OAuth_1701238704121
+        repoName: online
+        build: <+input>
+  stages:
+    - stage:
+        name: dc
+        identifier: dc
+        description: ""
+        type: CI
+        spec:
+          cloneCodebase: true
+          platform:
+            os: Windows
+            arch: Arm64
+          runtime:
+            type: Cloud
+            spec: {}
+          execution:
+            steps:
+              - step:
+                  type: GitClone
+                  name: GitClone_1
+                  identifier: GitClone_1
+                  spec:
+                    connectorRef: account.Github_OAuth_1701238704121
+                    repoName: online
+                    cloneDirectory: https://github.com/Mahommadali/online-product.git
+                    build:
+                      type: branch
+                      spec:
+                        branch: main
