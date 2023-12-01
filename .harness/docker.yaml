@@ -14,4 +14,10 @@ pipeline:
           org: default
           pipeline: dc
           project: ca
-          outputs: []
+          outputs:
+            - name: dc
+              value: "10"
+        when:
+          pipelineStatus: Success
+        delegateSelectors:
+          - madan
