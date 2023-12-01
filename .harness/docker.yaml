@@ -1,0 +1,17 @@
+pipeline:
+  name: docker
+  identifier: docker
+  projectIdentifier: ca
+  orgIdentifier: default
+  tags: {}
+  stages:
+    - stage:
+        name: dc
+        identifier: dc
+        description: ""
+        type: Pipeline
+        spec:
+          org: default
+          pipeline: dc
+          project: ca
+          outputs: []
